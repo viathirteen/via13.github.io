@@ -1,155 +1,128 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+/* --- via.thirteen custom styles --- */
 
-:root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
+.homepage {
+	display: grid;
+	place-items: center;
+	padding: 6rem 1.5rem;
+	text-align: center;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  .intro h1 {
+	font-size: 3rem;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	text-transform: lowercase;
+	color: #111;
+  }
+  
+  .intro p {
+	font-size: 1.25rem;
+	color: #444;
+	max-width: 36ch;
+	margin-top: 1rem;
+	line-height: 1.6;
+  }
+  <section class="recent-work">
+  <h2>recent work</h2>
+  <div class="grid">
+    <a href="https://www.instagram.com/reel/REEL_ID_1" target="_blank" rel="noopener">
+      <img src="/blog-placeholder-1.jpg" alt="Reel 1" />
+    </a>
+    <a href="https://www.instagram.com/reel/REEL_ID_2" target="_blank" rel="noopener">
+      <img src="/blog-placeholder-2.jpg" alt="Reel 2" />
+    </a>
+    <a href="https://www.instagram.com/reel/REEL_ID_3" target="_blank" rel="noopener">
+      <img src="/blog-placeholder-3.jpg" alt="Reel 3" />
+    </a>
+  </div>
+</section>
+.recent-work {
+	padding: 4rem 1.5rem;
+	text-align: center;
+  }
+  
+  .recent-work h2 {
+	font-size: 2rem;
 	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-body {
-	font-family: 'Atkinson', sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
+	margin-bottom: 2rem;
+	text-transform: lowercase;
+	color: #111;
+  }
+  
+  .recent-work .grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	max-width: 900px;
+	margin: 0 auto;
+  }
+  
+  .recent-work img {
 	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
-}
-
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
-}
+	border-radius: 1rem;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+  }
+  
+  .recent-work a:hover img {
+	transform: scale(1.03);
+  }
+  .recent-work {
+	padding: 4rem 1.5rem;
+	text-align: center;
+  }
+  
+  .recent-work h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-transform: lowercase;
+	color: #111;
+  }
+  
+  .recent-work .grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	max-width: 900px;
+	margin: 0 auto;
+  }
+  
+  .recent-work img {
+	width: 100%;
+	height: auto;
+	border-radius: 1rem;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+  }
+  
+  .recent-work a:hover img {
+	transform: scale(1.03);
+  }
+  .custom-footer {
+	text-align: center;
+	padding: 2rem 1rem;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	color: #111;
+  }
+  
+  .custom-footer .footer-links {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+  }
+  
+  .custom-footer a {
+	color: #444;
+	text-decoration: none;
+	font-weight: 500;
+  }
+  
+  .custom-footer a:hover {
+	text-decoration: underline;
+  }
+  
