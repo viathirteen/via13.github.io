@@ -1,10 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  site: 'https://viathirteen.github.io', // replace with your repo's GitHub Pages URL
+  base: '/viathirteen.github.io/',       // repo name as base path
 });
